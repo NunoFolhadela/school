@@ -1,36 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock, Paper, Scissors</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ghibli's Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="home-screen">
+        <h1>The Whispering Woods Game</h1>
+        <div id="character-selection">
+          <p>Choose your Champion:</p>
+          <button class="character-button" onclick="selectCharacter('sprite')">
+            <img src="images/char1.png" alt="Forest Sprite" />
+            <span>Forest Sprite</span>
+          </button>
+          <button
+            class="character-button"
+            onclick="selectCharacter('guardian')"
+          >
+            <img src="images/char2.png" alt="Stone Guardian" />
+            <span>Stone Guardian</span>
+          </button>
+          <button
+            class="character-button"
+            onclick="selectCharacter('wanderer')"
+          >
+            <img src="images/char3.png" alt="Mystic Wanderer" />
+            <span>Mystic Wanderer</span>
+          </button>
+        </div>
+        <div id="narrative-area">
+          <p id="main-narrative">
+            Before the Great Tree Spirit grants safe passage, you must prove
+            your worth in a game of chance against a tricky forest dweller.
+            Choose wisely, for the path is only revealed to the victor!
+          </p>
+          <p id="character-narrative"></p>
+          <p>
+            The rules are ancient: Rock crushes Scissors, Scissors cuts Paper,
+            Paper covers Rock. Best of 3 rounds wins.
+          </p>
+        </div>
+        <button id="start-game" onclick="startGame()" style="display: none">
+          Begin the Trial
+        </button>
+      </div>
+
+      <div id="game-screen" style="display: none">
+<div id="game-screen" style="display: none;">
+    <div id="character-display">
+        <div class="player-info">
+            <h2 id="player-name">Player</h2>
+            <img id="player-char-img" src="" alt="Player Character">
+        </div>
+        <div class="vs-text">VS</div>
+        <div class="opponent-info">
+            <h2 id="opponent-name">Opponent</h2>
+            <img id="opponent-char-img" src="" alt="Computer Opponent">
+        </div>
+    </div>
+    
     <h1>Rock, Paper, Scissors</h1>
-    <p>Choose your move! (Best of 3 rounds)</p>
-    <div class="choices">
-      <button onclick="playRound('Rock')">
-        <img src="images/rock.png" alt="Rock">
-      </button>
-      <button onclick="playRound('Paper')">
-        <img src="images/paper.png" alt="Paper">
-      </button>
-      <button onclick="playRound('Scissors')">
-        <img src="images/scissors.png" alt="Scissors">
-      </button>
+        <p>Choose your move! (Best of 3 rounds)</p>
+        <div class="choices">
+          <button onclick="playRound('Rock')">
+            <img src="images/rock.png" alt="Rock" />
+          </button>
+          <button onclick="playRound('Paper')">
+            <img src="images/paper.png" alt="Paper" />
+          </button>
+          <button onclick="playRound('Scissors')">
+            <img src="images/scissors.png" alt="Scissors" />
+          </button>
+        </div>
+        <div id="game-status">
+          <p id="round">Round: 1</p>
+          <p id="player-choice">Player Choice:</p>
+          <p id="computer-choice">Computer Choice:</p>
+          <p id="round-result"></p>
+          <p id="score">Score - Player: 0, Computer: 0</p>
+          <p id="game-result"></p>
+        </div>
+        <button id="play-again" style="display: none" onclick="resetGame()">
+          Play Again
+        </button>
+      </div>
     </div>
-    <div id="game-status">
-      <p id="round">Round: 1</p>
-      <p id="player-choice">Player Choice: </p> 
-      <p id="computer-choice">Computer Choice: </p>
-      <p id="round-result"></p>
-      <p id="score">Score - Player: 0, Computer: 0</p>
-      <p id="game-result"></p>
-    </div>
-    <button id="play-again" style="display: none;" onclick="resetGame()">Play Again</button>
-  </div>
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
