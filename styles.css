@@ -1,315 +1,153 @@
 /* --- Basic Reset and Typography --- */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f9; /* Light background */
-  color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9; /* Light background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
 
 /* --- Container and Layout --- */
 .container {
-  background-color: #fff;
-  padding: 40px 50px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 550px; /* Wider to accommodate character choices */
-  width: 90%;
+    background-color: #fff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
 }
 
 h1 {
-  color: #007bff; /* Primary blue color */
-  margin-bottom: 15px;
+    color: #007bff; /* Primary blue color */
+    margin-bottom: 5px;
 }
 
 p {
-  margin-bottom: 15px;
-  line-height: 1.5;
+    margin-bottom: 20px;
 }
 
-/* === HOME SCREEN STYLES === */
-#home-screen {
-  padding: 10px;
-}
-
-#home-screen h1 {
-  color: #3cb371; /* Ghibli-esque green for the title */
-}
-
-/* Narrative Box Styling */
-#narrative-area {
-  margin-top: 20px;
-  margin-bottom: 30px;
-  padding: 15px;
-  background-color: #e6f7ff; /* Light background for narrative */
-  border-radius: 8px;
-  border: 1px solid #cceeff;
-}
-
-#narrative-area p {
-  margin: 5px 0;
-}
-
-#character-narrative {
-  font-style: italic;
-  color: #0056b3;
-  font-weight: bold;
-}
-
-/* Character Selection Styles */
-#character-selection {
-  margin-top: 25px;
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-#character-selection p {
-  width: 100%;
-  margin-bottom: 10px;
-  font-weight: bold;
-  font-size: 1.1em;
-  color: #007bff;
-}
-
-.character-button {
-  /* Style for the button container */
-  background-color: #f0f0f0;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  padding: 10px;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 120px;
-  height: 150px;
-  justify-content: space-between;
-}
-
-.character-button img {
-  /* Style for the character image within the button */
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 50%; /* Make character images round */
-  border: 2px solid transparent;
-  transition: border-color 0.2s;
-}
-
-.character-button span {
-  margin-top: 8px;
-  font-weight: bold;
-  color: #555;
-  font-size: 0.9em;
-}
-
-.character-button:hover {
-  background-color: #e0e0e0;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
-.character-button.selected {
-  /* Highlight for selected character */
-  border-color: #007bff;
-  background-color: #e6f7ff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transform: translateY(-1px);
-}
-
-.character-button.selected img {
-  border-color: #007bff;
-}
-
-#start-game {
-  width: 100%;
-  padding: 15px 20px;
-  font-size: 1.2em;
-  background-color: #ff6347;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.1s;
-  margin-top: 20px;
-}
-
-#start-game:hover {
-  background-color: #e55c42;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* === IN-GAME CHARACTER DISPLAY (NEW) === */
-#character-display {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-bottom: 25px;
-  padding: 15px 0;
-  border-bottom: 1px dashed #ddd;
-}
-
-.player-info,
-.opponent-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 30%;
-}
-
-.player-info h2,
-.opponent-info h2 {
-  font-size: 1.1em;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-#player-char-img,
-#opponent-char-img {
-  width: 70px;
-  height: 70px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 3px solid #007bff; /* Player border color */
-}
-
-.opponent-info #opponent-char-img {
-  border-color: #ff6347; /* Opponent border color */
-}
-
-.vs-text {
-  font-size: 1.8em;
-  font-weight: bold;
-  color: #999;
-}
-
-#game-screen h1 {
-  margin-top: 15px;
-  margin-bottom: 10px;
-}
-/* --- END IN-GAME CHARACTER DISPLAY --- */
-
-/* --- RPS Choice Buttons --- */
+/* --- Choice Buttons (Square container style) --- */
 .choices {
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: space-around;
-  gap: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px; /* Increased gap for visual space */
 }
 
-.choices button,
-#play-again {
-  padding: 12px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.1s;
+.choices button, #play-again {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
-/* FIX: Button sizing for perfect square */
+/* Button sizing and flex container for the image */
 .choices button {
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-  width: 80px;
-  flex-shrink: 0;
+    padding: 5px; /* Reduced padding to maximize image area */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* FIX: Set fixed, equal dimensions for a perfect square button */
+    height: 80px; 
+    width: 80px;
+    
+    /* Ensure colors are reapplied after previous styling */
+    flex-shrink: 0; 
 }
 
 /* Styling the image inside the square button */
 .choices button img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Prevents image stretching */
-  border-radius: 5px;
+    width: 100%; 
+    height: 100%; 
+    
+    /* FIX: Prevents stretching by covering the space and cropping if needed */
+    object-fit: cover; 
+    
+    border-radius: 5px; 
 }
 
 /* Specific button colors */
-.choices button:nth-child(1) {
-  background-color: #ff6347;
-  color: white;
-} /* Rock */
-.choices button:nth-child(2) {
-  background-color: #3cb371;
-  color: white;
-} /* Paper */
-.choices button:nth-child(3) {
-  background-color: #ffa500;
-  color: white;
-} /* Scissors */
+.choices button:nth-child(1) { /* Rock */
+    background-color: #ff6347;
+    color: white;
+}
+.choices button:nth-child(2) { /* Paper */
+    background-color: #3cb371;
+    color: white;
+}
+.choices button:nth-child(3) { /* Scissors */
+    background-color: #ffa500;
+    color: white;
+}
 
 .choices button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .choices button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
 
 /* --- Game Status Area --- */
 #game-status {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 25px;
-  text-align: left;
-  background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: left;
+    background-color: #fafafa;
 }
 
 #game-status p {
-  margin: 5px 0;
-  line-height: 1.6;
+    margin: 5px 0;
+    line-height: 1.6;
 }
 
 #round {
-  font-weight: bold;
-  color: #007bff;
+    font-weight: bold;
+    color: #007bff;
 }
 
 #score {
-  font-weight: bold;
-  margin-top: 10px;
-  border-top: 1px dashed #eee;
-  padding-top: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    border-top: 1px dashed #eee;
+    padding-top: 10px;
 }
 
 #round-result {
-  font-style: italic;
-  color: #666;
+    font-style: italic;
+    color: #666;
 }
 
 #game-result {
-  font-size: 1.4em;
-  font-weight: 900;
-  margin-top: 20px;
+    font-size: 1.4em;
+    font-weight: 900;
+    margin-top: 20px;
 }
 
 /* --- Play Again Button --- */
 #play-again {
-  width: 100%;
-  background-color: #007bff;
-  color: white;
-  margin-top: 15px;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    margin-top: 15px;
 }
 
 #play-again:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
